@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{ 
+    char ch[100];
+    int i, count = 0;
+
+    printf("Enter a string: ");
+    scanf("%s", ch); // reads string without spaces
+
+    for (i = 0; ch[i] != '\0'; i++)
+    {
+        if ((ch[i] >= 'A' && ch[i] <= 'Z') || 
+            (ch[i] >= 'a' && ch[i] <= 'z') || 
+            (ch[i] >= '0' && ch[i] <= '9'))
+        {
+            // it's a letter or digit, skip
+        }
+        else {
+            count++; // it's a special character
+        }
+    }
+
+    printf("Special characters count: %d\n", count);
+
+    return 0;
+}
