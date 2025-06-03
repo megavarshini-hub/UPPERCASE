@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+    char c;         // to store the character like 'p'
+    char word[100]; // to store the word like "apple"
+    int i, found = 0;
+
+    printf("Enter a character: ");
+    scanf(" %c", &c);  // space before %c to ignore newline
+
+    printf("Enter a word: ");
+    scanf("%s", word);  // read the word
+
+    for (i = 0; word[i] != '\0'; i++) {
+        if (word[i] == c) {
+            found = 1;
+            break;
+        }
+    }
+
+    if (found) {
+        printf("Present\n");
+    } else {
+        printf("No\n");
+    }
+
+    return 0;
+}
