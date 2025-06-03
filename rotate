@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <string.h>  // ✅ required for strlen()
+
+int main()
+{
+    char ch[100];
+    int n, len, i;
+
+    printf("Enter a character: ");
+    scanf("%s", ch); 
+
+    printf("Enter a rotations: ");
+    scanf("%d", &n);
+
+    len = strlen(ch);   // Get length of the string
+    n = n % len;        // Handle if n > length
+
+    // Left rotate logic
+    for(i = n; i < len; i++) {
+        printf("%c", ch[i]);  // Print from n to end
+    }
+
+    for(i = 0; i < n; i++) {
+        printf("%c", ch[i]);  // Print from 0 to n-1
+    }
+
+    printf("\n");
+    return 0;
+}
